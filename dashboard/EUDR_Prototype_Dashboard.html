@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EUDR Compliance Prototype — Stonehouse</title>
+<style>
+  :root{
+    --ink:#13211c; --forest:#1f4d3b; --moss:#3a7d5c; --leaf:#6aa888;
+    --amber:#c07a1e; --amber-bg:#f7ecd9; --paper:#f6f5f0; --card:#ffffff;
+    --line:#e2e0d6; --muted:#6b7268; --good:#2f7a4f; --flag:#b5651d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Segoe UI",-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    font-feature-settings:"tnum" 1;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 22px 60px}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);font-weight:700}
+  header.hd{border-bottom:2px solid var(--forest);padding-bottom:22px;margin-bottom:8px}
+  h1{font-size:30px;line-height:1.15;margin:8px 0 6px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  .sub{color:var(--muted);font-size:14px;max-width:60ch}
+  .ribbon{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:150px;flex:1}
+  .stat .n{font-size:28px;font-weight:800;color:var(--forest);letter-spacing:-.02em}
+  .stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+  .stat.amber .n{color:var(--amber)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
+  .panel h2{font-size:15px;margin:0 0 2px;font-weight:800;letter-spacing:-.01em}
+  .panel .cap{font-size:12px;color:var(--muted);margin-bottom:16px}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--moss);background:#eaf2ec;border-radius:20px;padding:3px 9px;float:right}
+  /* commodity bars */
+  .barrow{display:grid;grid-template-columns:92px 1fr 34px;align-items:center;gap:10px;margin:9px 0}
+  .barrow .k{font-size:13px;font-weight:600}
+  .track{height:14px;background:#eef0ea;border-radius:7px;overflow:hidden}
+  .fill{height:100%;border-radius:7px}
+  .barrow .v{font-size:13px;font-weight:700;text-align:right;color:var(--ink)}
+  .chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;border:1px solid var(--line);background:#fafaf6;border-radius:20px;padding:4px 10px;color:var(--ink)}
+  .chip b{color:var(--forest)}
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{text-align:left;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line);padding:6px 8px;font-weight:700}
+  td{padding:7px 8px;border-bottom:1px solid #f0eee6}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px;white-space:nowrap}
+  .ok{color:var(--good);background:#e7f3ec}
+  .warn{color:var(--flag);background:var(--amber-bg)}
+  .legend{font-size:11px;color:var(--muted);margin-top:10px}
+  /* footprint */
+  .fbar{display:grid;grid-template-columns:78px 1fr 70px;align-items:center;gap:10px;margin:8px 0}
+  .fbar .k{font-size:12.5px;font-weight:600}
+  .fbar .v{font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  .note{background:#eaf2ec;border-left:3px solid var(--moss);border-radius:0 8px 8px 0;
+    padding:10px 12px;font-size:12.5px;margin-top:14px;color:var(--ink)}
+  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;font-size:11.5px;color:var(--muted)}
+  .synthtag{color:var(--amber);font-weight:700}
+  svg{display:block;width:100%;height:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hd">
+    <div class="eyebrow">EU Deforestation Regulation · Compliance Prototype</div>
+    <h1>Commodity Exposure &amp; Due-Diligence Analytics</h1>
+    <p class="sub">A working prototype for Stonehouse Marketing Ltd — mapping Homestead &amp; White Hat own-brand products to EUDR commodities and tracking the Due Diligence Statements (DDS) suppliers must provide. Built on real product data and <span class="synthtag">synthetic DDS records</span>.</p>
+    <div class="ribbon">
+      <div class="stat"><div class="n">81</div><div class="l">Products analysed</div></div>
+      <div class="stat amber"><div class="n">15</div><div class="l">EUDR-exposed (~18%)</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Commodities present</div></div>
+      <div class="stat"><div class="n">Dec 2026</div><div class="l">Compliance deadline</div></div>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- Panel 1: Commodity exposure -->
+    <section class="panel">
+      <span class="tag">Real data</span>
+      <h2>1 · Commodity exposure map</h2>
+      <div class="cap">Own-brand products classified against the seven EUDR commodities.</div>
+
+      <div class="barrow"><div class="k">Wood</div><div class="track"><div class="fill" style="width:40%;background:var(--forest)"></div></div><div class="v">6</div></div>
+      <div class="barrow"><div class="k">Palm oil</div><div class="track"><div class="fill" style="width:33%;background:var(--moss)"></div></div><div class="v">5</div></div>
+      <div class="barrow"><div class="k">Pet food*</div><div class="track"><div class="fill" style="width:20%;background:var(--amber)"></div></div><div class="v">3</div></div>
+      <div class="barrow"><div class="k">Cattle</div><div class="track"><div class="fill" style="width:7%;background:var(--leaf)"></div></div><div class="v">1</div></div>
+      <div class="barrow"><div class="k" style="color:var(--muted)">Out of scope</div><div class="track"><div class="fill" style="width:100%;background:#d7d9d0"></div></div><div class="v" style="color:var(--muted)">66</div></div>
+
+      <div class="chips">
+        <span class="chip">Comfort Toilet Tissue <b>· Wood</b></span>
+        <span class="chip">Luxury Soft Tissue <b>· Wood</b></span>
+        <span class="chip">Firelog 700g <b>· Wood</b></span>
+        <span class="chip">Cooking Oil 20lt <b>· Palm</b></span>
+        <span class="chip">Firelighters <b>· Palm</b></span>
+        <span class="chip">Paws Beef Complete <b>· Cattle</b></span>
+      </div>
+      <div class="legend">* Pet-food items flagged for ingredient verification (possible soy / cattle content).</div>
+    </section>
+
+    <!-- Panel 2: Synthetic DDS register -->
+    <section class="panel">
+      <span class="tag" style="color:var(--amber);background:var(--amber-bg)">Synthetic</span>
+      <h2>2 · DDS register &amp; validation</h2>
+      <div class="cap">Generated Due Diligence Statements (EUDR Annex II fields) with automated quality checks.</div>
+      <table>
+        <thead><tr><th>DDS ref</th><th>Commodity</th><th>HS</th><th>Origin</th><th class="num">Qty (t)</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>DDS-26-00142</td><td>Wood</td><td>4818</td><td>Ireland</td><td class="num">18.4</td><td><span class="pill ok">Valid</span></td></tr>
+          <tr><td>DDS-26-00143</td><td>Palm oil</td><td>1511</td><td>Indonesia</td><td class="num">6.2</td><td><span class="pill ok">Valid</span></td></tr>
+          <tr><td>DDS-26-00144</td><td>Cattle</td><td>2309</td><td>Ireland</td><td class="num">12.0</td><td><span class="pill warn">No geo-data</span></td></tr>
+          <tr><td>DDS-26-00145</td><td>Wood</td><td>4401</td><td>Ireland</td><td class="num">22.1</td><td><span class="pill ok">Valid</span></td></tr>
+          <tr><td>DDS-26-00146</td><td>Palm oil</td><td>34<span style="color:var(--flag)">x1</span></td><td>Malaysia</td><td class="num">3.5</td><td><span class="pill warn">Invalid HS</span></td></tr>
+          <tr><td>DDS-26-00147</td><td>Rubber</td><td>4015</td><td>Malaysia</td><td class="num">0.8</td><td><span class="pill ok">Valid</span></td></tr>
+        </tbody>
+      </table>
+      <div class="legend">Validation flags missing geolocation, invalid HS codes and duplicates automatically — 2 of 6 sample records flagged.</div>
+    </section>
+
+    <!-- Panel 3: Carbon footprint -->
+    <section class="panel">
+      <span class="tag">Supporting</span>
+      <h2>3 · Packaging carbon footprint</h2>
+      <div class="cap">2024 footprint by material (tonnes CO₂e) — supporting analysis.</div>
+      <div class="fbar"><div class="k">Paper/Card</div><div class="track"><div class="fill" style="width:100%;background:var(--forest)"></div></div><div class="v">44,075</div></div>
+      <div class="fbar"><div class="k">Wood</div><div class="track"><div class="fill" style="width:6.5%;background:var(--moss)"></div></div><div class="v">2,860</div></div>
+      <div class="fbar"><div class="k">Plastic</div><div class="track"><div class="fill" style="width:0.8%;background:#c9ccc2"></div></div><div class="v">356</div></div>
+      <div class="fbar"><div class="k">Steel</div><div class="track"><div class="fill" style="width:0.4%;background:#c9ccc2"></div></div><div class="v">36</div></div>
+      <div class="note"><b>99% wood-derived.</b> Carbon reduction and EUDR wood relevance point at the same materials — the project's connecting insight.</div>
+    </section>
+
+    <!-- Panel 4: Forecast -->
+    <section class="panel">
+      <span class="tag" style="color:var(--amber);background:var(--amber-bg)">Synthetic</span>
+      <h2>4 · DDS volume forecast</h2>
+      <div class="cap">Projected monthly DDS as suppliers onboard ahead of the 2026 deadline.</div>
+      <svg viewBox="0 0 360 150" role="img" aria-label="Forecast line chart of rising monthly DDS volume">
+        <line x1="34" y1="120" x2="350" y2="120" stroke="#e2e0d6"/>
+        <line x1="34" y1="80" x2="350" y2="80" stroke="#eef0ea"/>
+        <line x1="34" y1="40" x2="350" y2="40" stroke="#eef0ea"/>
+        <text x="28" y="123" font-size="9" fill="#6b7268" text-anchor="end">0</text>
+        <text x="28" y="83" font-size="9" fill="#6b7268" text-anchor="end">60</text>
+        <text x="28" y="43" font-size="9" fill="#6b7268" text-anchor="end">120</text>
+        <polyline fill="none" stroke="#1f4d3b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
+          points="40,112 68,108 96,101 124,96 152,88 180,82 208,72 236,63 264,52 292,44 320,33 348,24"/>
+        <polygon fill="#1f4d3b" opacity="0.07"
+          points="40,112 68,108 96,101 124,96 152,88 180,82 208,72 236,63 264,52 292,44 320,33 348,24 348,120 40,120"/>
+        <g fill="#1f4d3b"><circle cx="40" cy="112" r="2.5"/><circle cx="152" cy="88" r="2.5"/><circle cx="264" cy="52" r="2.5"/><circle cx="348" cy="24" r="3"/></g>
+        <text x="40" y="138" font-size="9" fill="#6b7268" text-anchor="middle">Jan</text>
+        <text x="152" y="138" font-size="9" fill="#6b7268" text-anchor="middle">May</text>
+        <text x="264" y="138" font-size="9" fill="#6b7268" text-anchor="middle">Sep</text>
+        <text x="348" y="138" font-size="9" fill="#6b7268" text-anchor="end">Dec</text>
+      </svg>
+      <div class="legend">Illustrative projection — the model will be trained on the synthetic DDS history.</div>
+    </section>
+
+  </div>
+
+  <footer>
+    <b>Prototype — illustrative.</b> Real product/material data from Stonehouse (Green Streets 2024) and EXIOBASE emission factors; DDS records are <span class="synthtag">synthetic</span>, parameterised from real suppliers, volumes and origins. Built for the MSc Business Analytics capstone · Design Science Research + CRISP-DM.
+  </footer>
+
+</div>
+</body>
+</html>
