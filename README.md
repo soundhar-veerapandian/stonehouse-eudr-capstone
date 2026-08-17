@@ -1,8 +1,11 @@
 # DDS Tracking Model/System for EUDR
 
-MSc Business Analytics Capstone — UCD Michael Smurfit Graduate Business School  
-Sponsor: Stonehouse Marketing Ltd  
-Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian  
+MSc Business Analytics Capstone — UCD Michael Smurfit Graduate Business School
+
+Sponsor: Stonehouse Marketing Ltd
+
+Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian
+
 Supervisors: Dr Hippolyte Lefebvre (academic), Mr Brian Minehane (industry)
 
 ## Overview
@@ -21,13 +24,13 @@ From 30 December 2026 the EU Deforestation Regulation requires operators to prov
 
 ```
 exposure map (14 of 81 in scope)
-  → Annex II schema (19 fields, PK + self-referencing FK)
-  → SQLite database (CRUD, archiving for 5-year retention)
-  → 1,000 synthetic DDS (seed 42, ~10% seeded faults)
-  → validation (818 valid / 182 flagged)
-  → forecast (+1.1/month; ~60/month by early 2028)
-  → ML extraction (98–100% fields; 78.6% under unseen vocabulary)
-  → Power BI dashboard
+  -> Annex II schema (19 fields, PK + self-referencing FK)
+  -> SQLite database (CRUD, archiving for 5-year retention)
+  -> 1,000 synthetic DDS (seed 42, ~10% seeded faults)
+  -> validation (818 valid / 182 flagged)
+  -> forecast (+1.1/month; ~60/month by early 2028)
+  -> ML extraction (98-100% fields; 78.6% under unseen vocabulary)
+  -> Power BI dashboard
 ```
 
 ## Key results
