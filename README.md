@@ -1,10 +1,10 @@
 
 # DDS Tracking Model/System for EUDR
 
-MSc Business Analytics Capstone — UCD Michael Smurfit Graduate Business School
-Sponsor: Stonehouse Marketing Ltd
-Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian
-Supervisors: Dr Hippolyte Lefebvre (academic), Mr Brian Minehane (industry)
+MSc Business Analytics Capstone - UCD Michael Smurfit Graduate Business School.
+Sponsor: Stonehouse Marketing Ltd.
+Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian.
+Supervisors: Dr Hippolyte Lefebvre (academic), Mr Brian Minehane (industry).
 
 ## Overview
 
@@ -42,13 +42,13 @@ exposure map (14 of 81 in scope)
 
 | Component | Result |
 |---|---|
-| Commodity exposure | 14 of 81 products in scope — wood (tissue, firelogs, firelighters) and pet food (cattle, soya) |
+| Commodity exposure | 14 of 81 products in scope - wood (tissue, firelogs, firelighters) and pet food (cattle, soya) |
 | Packaging footprint 2024 | ~326 t CO2e across 68 products (~1,040 t scaled to full range); 92% wood-derived |
 | Validation | 818 valid, 182 flagged (119 missing prior reference, 33 missing geolocation, 30 invalid HS) |
 | Forecast | +1.1 statements/month; ~60/month by early 2028 |
 | ML extraction | 100% reference/quantity/description, 98% HS code on 60 unseen documents |
 | Classifier benchmarking | Naive Bayes 78.6%, Linear SVM 78.6%, Logistic Regression 71.4% under unseen vocabulary |
-| Triangulation | Wood 5.93 t computed vs 5.887 t audited (Repak) — under 1% difference |
+| Triangulation | Wood 5.93 t computed vs 5.887 t audited (Repak) - under 1% difference |
 
 ## Deliverable
 
