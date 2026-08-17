@@ -1,9 +1,9 @@
 
 # DDS Tracking Model/System for EUDR
 
-MSc Business Analytics Capstone - UCD Michael Smurfit Graduate Business School
-Sponsor: Stonehouse Marketing Ltd
-Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian
+MSc Business Analytics Capstone — UCD Michael Smurfit Graduate Business School  
+Sponsor: Stonehouse Marketing Ltd  
+Team: Shreeja Kalathur, Dalia Robin Dias, Soundhar Karthik Veerapandian  
 Supervisors: Dr Hippolyte Lefebvre (academic), Mr Brian Minehane (industry)
 
 ## Overview
